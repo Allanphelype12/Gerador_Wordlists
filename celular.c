@@ -6,7 +6,7 @@ void gera_celular(const char prefixo[]);
 
 FILE *resul;
 int tamanho = 4;
-unsigned long int limite = 999999;
+unsigned long int limite = 99999999;
 char arquivo[100];
 
 int main() {
@@ -14,11 +14,8 @@ int main() {
     scanf("%s", arquivo);//digita o nome do arquivo
     sprintf(arquivo, "%s.txt", arquivo);//adiciona .txt no final do nome do arquivo
 
-   // gera_celular("99");//cria uma wordlist com prefixo+ os numeros começando do 0 ate a variavel limite
-    gera_celular("99");
-    gera_celular("96");
-    gera_celular("94");
-    gera_celular("92");
+   // gera_celular("99");//cria uma wordlist com prefixo+ os numeros comeÃ§ando do 0 ate a variavel limite
+
 
 
 
@@ -33,7 +30,7 @@ void gera_celular(const char prefixo[]) {
 
     printf("\nGerando wordlist: %s", prefixo);
     for (i = 0; i < limite+1; i++)//gera os numeros
-        fprintf(resul, "%s%06li\n",prefixo, i);//PS: se você quiser criar senhas com mais digitos, onde tem %06li , basta você aumentar o numero no lugar do 6, sempre deixando o zero a esquerda
+        fprintf(resul, "%s%08li\n",prefixo, i);//PS: se vocÃª quiser criar senhas com mais digitos, onde tem %06li , basta vocÃª aumentar o numero no lugar do 6, sempre deixando o zero a esquerda
 
     fclose(resul);//fecha o arquivo
 }
